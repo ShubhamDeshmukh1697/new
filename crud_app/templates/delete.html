@@ -1,0 +1,12 @@
+{% extends 'basic.html' %}
+{% block body %}
+<div class="container">
+    <p>Are you sure you want to delete this order: <b>{{prod.pname}}</b> </p>
+    <form action="/{% url 'home' %}" method="POST">
+    {% csrf_token %}
+    
+    <input type="submit" class="btn btn-danger"name="confirm" id="confirm" value="Delete">  
+
+    </form>
+</div>
+{% endblock body %} 
